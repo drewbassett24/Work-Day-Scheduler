@@ -17,7 +17,7 @@
   <header class="jumbotron">
     <h1 class="display-3">Work Day Scheduler</h1>
     <p class="lead">A simple calendar app for scheduling your work day</p>
-    <p id="currentDay" class="lead"></p>
+    <p id="currentDay" class="lead">Today's date</p>
   </header>
 
   <div class="container">
@@ -124,10 +124,23 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="js/luxon.js"></script>
-  <script src="js/script.js"></script>
+   <script src="js/script.js"></script>
+    <!--<script>
+      const m = moment();
+      console.log(m.toString());
+      </script>-->
+
 </body>
+<script>
+   $("#currentDay").css ({border: "2px solid red"});
+  
+
+
+</script>
+
+
+  
 
 </html>
 
-<!-- $(document).ready(function () {}); -->
+

@@ -17,5 +17,6 @@ var userInput;
 var hourSpan;
 
 var interval = setInterval(function() {
-    
-}
+    var momentNow = moment();
+    $
+}, 100)
