@@ -3,33 +3,34 @@ var currentDay = $("#currentDay");
 var scheduleArea = $(".schedule");
 var timeRow = $(".timeRow");
 var currentDate = moment().format("ddd, MMM Do");
-var currenthour = moment ().format("H");
+var currenthour = moment().format("H");
 var toDos = [];
 
-function startSchedule(){
-    timeRow.each(function(){
+function startSchedule() {
+    timeRow.each(function () {
         var thisRow = $(this);
         var thisRowHr = parseInt(thisRow.attr("data-hour"));
         var toDoObject = {
             hour: thisRowHr,
             text: "",
-        }        
+        }
         toDoItems.push(toDoObj);
     });
 
     localStorage.setItem("todos", JSON.stringify(toDoItems));
 };
 
-function saveIt(){
+function saveIt() {
     var hourToUpdate = $(this).parent().attr("data-hour");
     var itemToHold = (($(this).parent()).children("textarea")).val();
-    for (var j = 0; j < toDoItems.length; j++){
-        if (toDoItems[j].hour == hourToUpdate){
+    for (var j = 0; j < toDoItems.length; j++) {
+        if (toDoItems[j].hour == hourToUpdate) {
             toDoItems[j].text = itemToAdd;
+        }
     }
+    localStorage.setItem("todos", JSON.stringify(toDoItems));
+    renderSchedule();
 }
-
-
 
 
 
