@@ -1,59 +1,57 @@
 //Declare Vars
-var currentDay = $("#currentDay");
 var scheduleArea = $(".schedule");
-var timeRow = $(".timeRow");
-var currentDate = moment().format("ddd, MMM Do");
-var currenthour = moment().format("H");
+// var timeRow = $(".timeRow");
+var timeRow = [];
+var currentDate = moment().format("MMM Do YYYY");
+var currentHour = parseInt(moment().format("H"));
 var toDos = [];
 
-function startSchedule() {
+$("#currentDay").text(currentDate);
+// console.log("current date: ", currentDate);
+// console.log("current hour: ", currentHour);
+
+setRows();
+
+//format rows depending on the time
+function setRows() {
+
+    $("textarea").each(function () {
+        var thisRow = $(this).attr("id");
+        timeRow.push(thisRow);
+    });
+    // console.log("timeRow Array: ", timeRow);
+
+    //Add colour per time of day
+    for (var i = 0; i < timeRow.length; i++) {
+        var timeNum = parseInt(timeRow[i])
+console.log(timeNum, currentHour)
+        if ((timeNum) === currentHour) {
+            $("textarea[id=" + timeRow[i] + "]").addClass("present");
+        } else if ((timeNum) > currentHour) {
+            $("textarea[id=" + timeRow[i] + "]").addClass("future");
+            
+        } else {
+            $("textarea[id=" + timeRow[i] + "]").addClass("past");
+        }
+    }
+}
+
+$(".fa-save").on("click", function (event) {
+    // event.preventDefault();
+
     timeRow.each(function () {
         var thisRow = $(this);
-        var thisRowHr = parseInt(thisRow.attr("data-hour"));
+        var thisRowHr = (thisRow.attr("id"));
         var toDoObject = {
             hour: thisRowHr,
             text: "",
         }
-        toDoItems.push(toDoObj);
+        toDoItems.push(toDoObject);
     });
 
     localStorage.setItem("todos", JSON.stringify(toDoItems));
-};
-
-function saveIt() {
-    var hourToUpdate = $(this).parent().attr("data-hour");
-    var itemToHold = (($(this).parent()).children("textarea")).val();
-    for (var j = 0; j < toDoItems.length; j++) {
-        if (toDoItems[j].hour == hourToUpdate) {
-            toDoItems[j].text = itemToAdd;
-        }
-    }
-    localStorage.setItem("todos", JSON.stringify(toDoItems));
-    renderSchedule();
-}
+});
 
 
 
 
-
-// var dateTimeNow = moment().format("MMMM do YYY, h:mm:ss a");
-
-// var nineAM = $("#9AM");
-// var tenAM = $("#10AM");
-// var elevenAM = $("#11AM");
-// var twelveAM = $("#12AM");
-// var onePM = $("#1PM");
-// var twoPM = $("#2PM");
-// var threePM = $("#3PM");
-// var fourPM = $("#4PM");
-// var fivePM = $("#5PM");
-// var sixPM = $("6PM");
-
-// var hour = moment ().hours();
-// var userInput;
-// var hourSpan;
-
-// var interval = setInterval(function() {
-//     var momentNow = moment();
-//     $
-// }, 100)
