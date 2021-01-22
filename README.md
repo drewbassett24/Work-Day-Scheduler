@@ -7,7 +7,7 @@ The task was to create a simple calendar application that allows a user to save 
 
 I used the [Moment.js](https://momentjs.com/) library to work with dates and times. 
 
-![image](assets/screenshot1.jpg)
+
 
 ## Requirements
 
