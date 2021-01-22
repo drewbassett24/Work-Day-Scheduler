@@ -6,7 +6,9 @@ A simple calendar application that allows a user to save events for each hour of
 The task was to create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
 I used the [Moment.js](https://momentjs.com/) library to work with dates and times. 
-
+![Screenshot 2](https://user-images.githubusercontent.com/73472116/105529957-15e93700-5cdf-11eb-946a-3e0c49da15e8.jpg)
+![Screenshot 3](https://user-images.githubusercontent.com/73472116/105529965-18e42780-5cdf-11eb-891d-f46dfcec1f09.jpg)
+![Screenshot 1](https://user-images.githubusercontent.com/73472116/105529982-1c77ae80-5cdf-11eb-9af6-9482f09b09bb.jpg)
 
 
 ## Requirements
