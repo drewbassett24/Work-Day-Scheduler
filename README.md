@@ -7,7 +7,9 @@ The task was to create a simple calendar application that allows a user to save 
 
 I used the [Moment.js](https://momentjs.com/) library to work with dates and times. 
 
-## User Requirements
+![image](assets/screenshot1.jpg)
+
+## Requirements
 
 ```
 The app is designed for an employee with a busy schedule to be able to to add important events to a daily planner, so that they can manage their time effectively.
